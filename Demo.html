@@ -26,7 +26,7 @@
     <!--Animation styles-->
     <link href="css/animation.css" rel="stylesheet">
 
-    </head>
+</head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
@@ -49,12 +49,16 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                 <li class="hidden">
+                    <!--<li class="hidden">
                         <a class="page-scroll" href="#page-top"></a>
+                    </li>-->
+                    <li>
+                        <a class="page-scroll" href="#about"><img src="images/login.png"/></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#login"><img src="images/login.png"/></a>
+                        <a class="page-scroll" href="#about"><img src="images/logout.png"/></a>
                     </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -62,33 +66,49 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Intro Section -->
+    <!-- Profile Section -->
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                     <a class="btn page-scroll" href="#about"><img src="images/play-button.png"/></a>
-                     <div id="logo-intro" class="slide-up">
-                       <img src="images/logo.png"/>
-                       <img src="images/umbrellaguy.png" class="image"/>                           
+                      <table class="table borderless">
+                        <thead>
+                            <tr>
+                            <td align="left">
+                                <img src="images/profilepic.png"/>
+                            </td>
+                            <td align="left">
+                                <img src="images/mylessons.png"/>
+                            </td>
+                            <tr>
+                        </table> 
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>
+                                <img src="images/firsthexreplay.png"/>
+                            </td>
+                             <td>
+                                <img src="images/2ndhexdemo.png"/>
+                            </td>
+                            
+                            <td>
+                                <img src="images/3rdhexgreetings.png"/>
+                            </td>
+                            <td>
+                                <img src="images/4thhexmeeting.png"/>
+                            </td>
+                             <td>
+                                <img src="images/5thhexnumbers.png"/>
+                            </td>
+                            <tr>
+                        </tbody>                                           
                     </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img src="images/worldup.png"/>
-                </div>
-                <div class="col-lg-12">
-                    <img src="images/map.png" onclick="document.location.href='demo.html'"/>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
