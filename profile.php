@@ -58,14 +58,10 @@ sec_session_start();
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <!--<li class="hidden">
                         <a class="page-scroll" href="#page-top"></a>
-                    </li>-->
-                    <li>
-                        <a class="page-scroll" href="#about"><img src="images/login.png"/></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about"><img src="images/logout.png"/></a>
-                    </li>
-                    
+                    </li>-->               
+                        <li>
+                        <a href="includes/logout.php"><img src="images/logout.png"/></a>
+                    </li>                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

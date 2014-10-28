@@ -1,6 +1,7 @@
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
+include_once 'includes/register.inc.php';
  
 sec_session_start();
  
@@ -69,8 +70,17 @@ if (login_check($mysqli) == true) {
                         <a class="page-scroll"><img src="images/invite.png"/></a>
                     </li>
                     <li>
+                    <?php if (login_check($mysqli) == true) : ?><?php echo htmlentities($_SESSION['username']); ?>
+                    </li>
+            
+                    <li>
+                        <a href="includes/logout.php"><img src="images/logout.png"/></a>
+                    </li>
+                    <?php else : ?>
+                    <li>
                         <a id="modal_trigger" href="#modal" class="page-scroll"><img src="images/login.png"/></a>
                     </li>
+                    <?php endif; ?>
                     
                 </ul>
             </div>
@@ -106,15 +116,23 @@ if (login_check($mysqli) == true) {
             <div class="social_login">
                 <div class="">
                     <a href="#" class="social_box fb">
-                        <span class="icon"><i class="fa fa-facebook"></i></span>
+                        <!--<span class="icon"><i class="fa fa-facebook"></i></span>-->
+                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
                         <span class="icon_title">Connect with Facebook</span>
                         
                     </a>
-
-                    <a href="#" class="social_box google">
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=851217828251291&version=v2.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                    <!--<a href="#" class="social_box google">
                         <span class="icon"><i class="fa fa-google-plus"></i></span>
                         <span class="icon_title">Connect with Google</span>
-                    </a>
+                    </a>-->
                 </div>
 
                 <div class="centeredText">
@@ -157,31 +175,50 @@ if (login_check($mysqli) == true) {
             </div>
 
             <!-- Register Form -->
-            <!--<div class="user_register">
-                <form>
-                    <label>Full Name</label>
-                    <input type="text" />
+            <div class="user_register">
+                <?php
+                if (!empty($error_msg)) {
+                echo $error_msg;
+                }
+                ?>
+                <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" 
+                method="post" 
+                name="registration_form">
+                    <label>Username</label>
+                    <input type="text" name="username"
+                    id="username"/>
                     <br />
 
                     <label>Email Address</label>
-                    <input type="email" />
+                    <input type="text" name="email" id="email" />
                     <br />
 
                     <label>Password</label>
-                    <input type="password" />
+                    <input type="password" name="password" 
+                             id="password"/>
                     <br />
-
-                    <div class="checkbox">
+                    <label>Confirm password:</label>
+                    <input type="password" 
+                                     name="confirmpwd" 
+                                     id="confirmpwd" />
+                    <br/>
+                    <!--<div class="checkbox">
                         <input id="send_updates" type="checkbox" />
                         <label for="send_updates">Send me occasional email updates</label>
-                    </div>
+                    </div>-->
 
                     <div class="action_btns">
                         <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                        <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+                        <!--<div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>-->
+                        <input type="button" class="btn btn_red" value="Register" 
+                            onclick="return regformhash(this.form,
+                                   this.form.username,
+                                   this.form.email,
+                                   this.form.password,
+                                   this.form.confirmpwd);" /> 
                     </div>
                 </form>
-            </div>-->
+            </div>
         </section>
     </div>
     </section>
@@ -270,7 +307,7 @@ if (login_check($mysqli) == true) {
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '608723459232539',
+      appId      : '851217828251291',
       xfbml      : true,
       version    : 'v2.1'
     });
