@@ -13,6 +13,39 @@
     display: none;
 }
 
+#object{
+    /*background-color: #fe5652;*/
+
+    /*visibility: hidden;*/
+    position: relative; 
+    -webkit-animation: mymove 7s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    animation: mymove 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {top: 0px;}
+    to {top: 450px;}
+}
+
+@keyframes mymove {
+    from {top: 0px;}
+    to {top: 450px;}
+}
+
+#tuxie {
+        /*width: 25px; height: 25px;*/
+        background: url('images/map1stcourse.png') no-repeat left top;
+    }
+    
+
+#tuxie:hover { background-position: 0px 0px }
+
 .popupContainer{
 	position:absolute;
 	width:330px;
@@ -23,6 +56,11 @@
 }
 
 #modal_trigger {margin:0px auto; width:0px; display:block;}
+
+#logo_intro {
+    /*background-color: #ccc;*/
+    padding: 20px  
+}
 
 .btn {padding:10px 20px; background: #F4F4F2;}
 .btn_red {background: #ED6347; color: #FFF;}
@@ -76,3 +114,45 @@ a.btn_red {color: #FFF;}
 .user_register input[type="checkbox"]+label {float:left;}
 
 .user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+
+/*mouseover map*/
+.map-image
+{
+}
+.map-image-overlay
+{
+width: 160px;
+height: 160px;
+background-color: #ffb00f;
+z-index: 1;
+opacity: 0.5;
+    position: fixed;
+    top: 0.5em;
+    display:none;
+}
+
+/*images*/
+div.img {
+    margin: 5px;
+    padding: 5px;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+
+div.img img {
+    display: inline;
+    margin: 5px;
+}
+
+div.img a:hover img {
+    border:0px solid #0000ff;
+}
+
+div.desc {
+    text-align: center;
+    font-weight: normal;
+    width: 120px;
+    margin: 5px;
+}

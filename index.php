@@ -38,7 +38,23 @@ if (login_check($mysqli) == true) {
     <![endif]-->
     <!--Animation styles-->
     <link href="css/animation.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!--<script>
+        $(window).load(function() {
+    $("html, body").animate({ scrollTop: $(document).height() }, 7000);
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+    $( "#myImg" ).mouseover(function(){
+        $(this).attr("src", "images/map1stcourse.png");
+    });
 
+    $( "#myImg" ).mouseout(function(){
+        $(this).attr("src", "images/map1stcourse.png");
+    });
+});
+    </script>-->
     </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
@@ -70,11 +86,15 @@ if (login_check($mysqli) == true) {
                         <a class="page-scroll"><img src="images/invite.png"/></a>
                     </li>
                     <li>
-                    <?php if (login_check($mysqli) == true) : ?><?php echo htmlentities($_SESSION['username']); ?>
+                    <?php if (login_check($mysqli) == true) : ?>
+                    <!--<?php echo htmlentities($_SESSION['username']); ?>-->
                     </li>
             
                     <li>
                         <a href="includes/logout.php"><img src="images/logout.png"/></a>
+                    </li>
+                     <li>
+                        <a href="../../profile.php" class="page-scroll"><img src="../../images/myprofile.png"/></a>
                     </li>
                     <?php else : ?>
                     <li>
@@ -91,20 +111,22 @@ if (login_check($mysqli) == true) {
 
 
     <!-- Intro Section -->
+   <?php if (login_check($mysqli) == false) : ?>
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                     <a href="howtoplay.html"><img src="images/Play-button.png"/></a>
+                    <img src="images/logo.png"/> </br></br>
+                     <a href="Games/Memory/index.php"><img src="images/Play-button.png"/></a>
                      </br></br>
-                     <div id="logo-intro" class="slide-up">
-                       <img src="images/logo.png"/>
-                       <img src="images/umbrellaguy.png" class="image"/></br></br>  
-                        <a class="page-scroll" href="#contact"><img src="images/how.png"/></a>                         
-                    </div>                     
-            </div></br></br>          
+                     <!--<div id="object">-->
+                      <img src="images/umbrellaguy.png"/></br></br> 
+                      <!--</div>-->                    
+                        <!--<a class="page-scroll" href="#contact"><img src="images/how.png"/></a>-->                        
+                                   
+            </div>         
         </div>
-
+    
     <div id="modal" class="popupContainer" style="display:none;">
         <header class="popupHeader">
             <span class="header_title">Login</span>
@@ -148,7 +170,7 @@ if (login_check($mysqli) == true) {
             <!-- Username & Password Login form -->
             <div class="user_login">
                 <form action="includes/process_login.php" method="post" name="login_form">
-                    <label>Email / Username</label>
+                    <label>Email</label>
                     <input type="text" name="email"/>
                     <br />
 
@@ -222,36 +244,33 @@ if (login_check($mysqli) == true) {
         </section>
     </div>
     </section>
+   
     <!-- About Section -->
+    <?php else : ?>
     <section id="about" class="about-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>You are currently logged <?php echo $logged ?>.</p>
-                    <img src="images/worldup.png"/>
-                </div>
-                <div class="col-lg-12">
-                    <img src="images/map.png" onclick="document.location.href='Demo.html'"/>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <iframe width="560" height="315" src="//www.youtube.com/embed/T3mdcxE-AbE" frameborder="0" allowfullscreen></iframe>
-                </div>
-                 <div class="fb-like"
-                    data-share="true"
-                    data-width="450"
-                    data-show-faces="true">
+                    <div id="tuxie">
+                    <!--<p>You are currently logged <?php echo $logged ?>.</p>-->
+                     <img src="images/mapnocourse.png" alt="" usemap="#Map" />
+                                    <map name="Map" id="Map">
+                                    <area alt="Juego de Memoria" title="Ir al juego de memoria" href="Games/Memory/" shape="poly" coords="533,458,553,457,566,476,556,497,532,497,523,479" />
+                                    <area alt="Ir al Juego de Deletreo" title="Go To Conversation Game" href="Games/Conversation/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
+                                    <area alt="Encuentra los objetos" title="Encuentra los objetos" href="#" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
+                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="#" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
+                                    <area alt="" title="" href="#" shape="poly" coords="288,381,307,388,314,409,297,427,280,422,271,402" />
+                                    <area alt="" title="" href="#" shape="poly" coords="384,360,405,367,406,390,387,400,369,396,366,373" />
+                                    <area alt="" title="" href="#" shape="poly" coords="453,337,471,333,492,348,485,368,465,373,450,362" />
+                                    <area alt="" title="" href="#" shape="poly" coords="479,269,500,268,511,286,499,306,482,308,468,292" />
+                                    <area alt="" title="" href="#" shape="poly" coords="370,235,396,233,407,255,395,273,375,275,361,256" />                                 
+                                    </map>
                     </div>
+                </div>
             </div>
         </div>
     </section>
+  <?php endif; ?>
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
@@ -321,6 +340,9 @@ if (login_check($mysqli) == true) {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+
+<!--end-->
+
 </body>
 
 </html>

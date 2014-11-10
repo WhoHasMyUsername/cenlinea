@@ -61,7 +61,10 @@ sec_session_start();
                     </li>-->               
                         <li>
                         <a href="includes/logout.php"><img src="images/logout.png"/></a>
-                    </li>                    
+                        </li> 
+                        <li>
+                        <a href="index.php"><img src="images/home-text.png"/></a>
+                        </li>                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,7 +73,7 @@ sec_session_start();
     </nav>
 
     <!-- Profile Section -->
-    <section id="intro" class="intro-section">
+    <section id="about" class="about-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -78,12 +81,10 @@ sec_session_start();
                         <thead>
                             <tr>
                             <td align="left">
-                                <img src="images/profilepic.png"/></br></br>
-                                <img src="images/createlesson.png"/>
+                                <img src="images/profilepic.png"  width="" height=""/></br></br>
+                                
                             </td>
                             <td align="left">
-                                <img src="images/mylessons.png"/>
-
                             </td>
                            </tr>
                                 
@@ -92,21 +93,21 @@ sec_session_start();
                         <tbody>
                             <tr>
                             <td>
-                                <a href="Demo.html"><img src="images/firstHexReplay.png"/></a>
-                            </td>
-                             <td>
-                                <img src="images/2ndHexDemo.png"/>
+                                <!--<img src="images/mapnocourse.png" id="myImg" onclick="document.location.href='Games/Memory/index.php'"/>-->
+                                <img src="images/mapnocourse.png" alt="" usemap="#Map" />
+                                    <map name="Map" id="Map">
+                                    <area alt="Juego de Memoria" title="Ir al juego de memoria" href="Games/Memory/" shape="poly" coords="533,458,553,457,566,476,556,497,532,497,523,479" />
+                                    <area alt="Ir al Juego de Deletreo" title="Go To Conversation Game" href="Games/Conversation/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
+                                    <area alt="Encuentra los objetos" title="Encuentra los objetos" href="Games/Object Finder/" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
+                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="Games/Speller/" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
+                                    <area alt="" title="" href="#" shape="poly" coords="288,381,307,388,314,409,297,427,280,422,271,402" />
+                                    <area alt="" title="" href="#" shape="poly" coords="384,360,405,367,406,390,387,400,369,396,366,373" />
+                                    <area alt="" title="" href="#" shape="poly" coords="453,337,471,333,492,348,485,368,465,373,450,362" />
+                                    <area alt="" title="" href="#" shape="poly" coords="479,269,500,268,511,286,499,306,482,308,468,292" />
+                                    <area alt="" title="" href="#" shape="poly" coords="370,235,396,233,407,255,395,273,375,275,361,256" />                                   
+                                    </map>
                             </td>
                             
-                            <td>
-                                <img src="images/3rdHexGreetings.png"/>
-                            </td>
-                            <td>
-                                <img src="images/4thHexMeeting.png"/>
-                            </td>
-                             <td>
-                                <img src="images/5thHexNumbers.png"/>
-                            </td>
                             </tr>
                         </tbody>                                           
                     </div>
