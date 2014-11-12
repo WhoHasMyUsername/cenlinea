@@ -244,6 +244,30 @@ if (login_check($mysqli) == true) {
         </section>
     </div>
     </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="tuxie">
+                    <!--<p>You are currently logged <?php echo $logged ?>.</p>-->
+                     <img src="images/mapnocourse.png" alt="" usemap="#Map" />
+                                    <map name="Map" id="Map">
+                                    <area alt="Juego de Memoria" title="Ir al juego de memoria" href="Games/Memory/" shape="poly" coords="533,458,553,457,566,476,556,497,532,497,523,479" />
+                                    <area alt="Encuentra los objetos" title="Go To Conversation Game" href="Games/Speller/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
+                                    <area alt="Deletrea" title="Deletrea" href="#" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
+                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="#" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
+                                    <area alt="" title="" href="#" shape="poly" coords="288,381,307,388,314,409,297,427,280,422,271,402" />
+                                    <area alt="" title="" href="#" shape="poly" coords="384,360,405,367,406,390,387,400,369,396,366,373" />
+                                    <area alt="" title="" href="#" shape="poly" coords="453,337,471,333,492,348,485,368,465,373,450,362" />
+                                    <area alt="" title="" href="#" shape="poly" coords="479,269,500,268,511,286,499,306,482,308,468,292" />
+                                    <area alt="" title="" href="#" shape="poly" coords="370,235,396,233,407,255,395,273,375,275,361,256" />                                 
+                                    </map>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
    
     <!-- About Section -->
     <?php else : ?>

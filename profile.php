@@ -97,9 +97,9 @@ sec_session_start();
                                 <img src="images/mapnocourse.png" alt="" usemap="#Map" />
                                     <map name="Map" id="Map">
                                     <area alt="Juego de Memoria" title="Ir al juego de memoria" href="Games/Memory/" shape="poly" coords="533,458,553,457,566,476,556,497,532,497,523,479" />
-                                    <area alt="Ir al Juego de Deletreo" title="Go To Conversation Game" href="Games/Conversation/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
+                                    <area alt="Ir al Juego de Deletreo" title="Go To Conversation Game" href="Games/Speller/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
                                     <area alt="Encuentra los objetos" title="Encuentra los objetos" href="Games/Object Finder/" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
-                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="Games/Speller/" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
+                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="Games/Conversation/" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
                                     <area alt="" title="" href="#" shape="poly" coords="288,381,307,388,314,409,297,427,280,422,271,402" />
                                     <area alt="" title="" href="#" shape="poly" coords="384,360,405,367,406,390,387,400,369,396,366,373" />
                                     <area alt="" title="" href="#" shape="poly" coords="453,337,471,333,492,348,485,368,465,373,450,362" />
