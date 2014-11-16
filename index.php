@@ -94,7 +94,7 @@ if (login_check($mysqli) == true) {
                         <a href="includes/logout.php"><img src="images/logout.png"/></a>
                     </li>
                      <li>
-                        <a href="../../profile.php" class="page-scroll"><img src="../../images/myprofile.png"/></a>
+                        <a href="profile.php" class="page-scroll"><img src="images/myprofile.png"/></a>
                     </li>
                     <?php else : ?>
                     <li>
@@ -117,7 +117,7 @@ if (login_check($mysqli) == true) {
             <div class="row">
                 <div class="col-lg-12">
                     <img src="images/logo.png"/> </br></br>
-                     <a href="Games/Memory/index.php"><img src="images/Play-button.png"/></a>
+                     <a href="Games/Memory/"><img src="images/Play-button.png"/></a>
                      </br></br>
                      <!--<div id="object">-->
                       <img src="images/umbrellaguy.png"/></br></br> 
@@ -137,20 +137,45 @@ if (login_check($mysqli) == true) {
             <!-- Social Login -->
             <div class="social_login">
                 <div class="">
-                    <a href="#" class="social_box fb">
+                   <!-- <a href="#" class="social_box fb">-->
                         <!--<span class="icon"><i class="fa fa-facebook"></i></span>-->
-                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
-                        <span class="icon_title">Connect with Facebook</span>
+
+                        <img border="0" src="images/login_facebook.png" onClick="fblogin();" border="0" 
+                        style="cursor:pointer"></br></br>
+                        <!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
+                        <!--<span class="icon_title">Connect with Facebook</span>-->
                         
-                    </a>
-                    <div id="fb-root"></div>
-                    <script>(function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s); js.id = id;
-                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=851217828251291&version=v2.0";
-                    fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
+                   <!--</a>-->
+                    <!--<div id="fb-root"></div>-->
+                    <div id="fb-root" style="float:left; width:1px;"></div>
+                   <!--<script>
+                    window.fbAsyncInit = function() {
+                        FB.init({
+                           appId: '851217828251291',
+                           cookie: true,
+                           xfbml: true,
+                           oauth: true
+                        }); 
+                    };
+
+
+                    (function() {
+                    var e = document.createElement('script'); e.async = true;
+                    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+                    document.getElementById('fb-root').appendChild(e);
+                    }());
+
+                    function fblogin(){
+                    FB.login(function(response){
+                    if (response.authResponse) {
+                    window.location='facebook/validatefb.php';
+                    }
+                    },{scope: 'publish_stream'});
+                    }
+                    </script>-->
+
+                     <img src="images/register_fb.png"/>
+
                     <!--<a href="#" class="social_box google">
                         <span class="icon"><i class="fa fa-google-plus"></i></span>
                         <span class="icon_title">Connect with Google</span>
@@ -251,17 +276,17 @@ if (login_check($mysqli) == true) {
                 <div class="col-lg-12">
                     <div id="tuxie">
                     <!--<p>You are currently logged <?php echo $logged ?>.</p>-->
-                     <img src="images/mapnocourse.png" alt="" usemap="#Map" />
+                      <img src="images/mapnocourse.png" alt="" usemap="#Map" />
                                     <map name="Map" id="Map">
                                     <area alt="Juego de Memoria" title="Ir al juego de memoria" href="Games/Memory/" shape="poly" coords="533,458,553,457,566,476,556,497,532,497,523,479" />
-                                    <area alt="Encuentra los objetos" title="Go To Conversation Game" href="Games/Speller/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
-                                    <area alt="Deletrea" title="Deletrea" href="#" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
-                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="#" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
+                                    <area alt="Ir al Juego de Deletreo" title="Go To Conversation Game" href="Games/Speller/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
+                                    <area alt="Encuentra los objetos" title="Encuentra los objetos" href="Games/Object Finder/" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
+                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="Games/Conversation/" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
                                     <area alt="" title="" href="#" shape="poly" coords="288,381,307,388,314,409,297,427,280,422,271,402" />
                                     <area alt="" title="" href="#" shape="poly" coords="384,360,405,367,406,390,387,400,369,396,366,373" />
                                     <area alt="" title="" href="#" shape="poly" coords="453,337,471,333,492,348,485,368,465,373,450,362" />
                                     <area alt="" title="" href="#" shape="poly" coords="479,269,500,268,511,286,499,306,482,308,468,292" />
-                                    <area alt="" title="" href="#" shape="poly" coords="370,235,396,233,407,255,395,273,375,275,361,256" />                                 
+                                    <area alt="" title="" href="#" shape="poly" coords="370,235,396,233,407,255,395,273,375,275,361,256" />                                   
                                     </map>
                     </div>
                 </div>
@@ -277,24 +302,24 @@ if (login_check($mysqli) == true) {
                 <div class="col-lg-12">
                     <div id="tuxie">
                     <!--<p>You are currently logged <?php echo $logged ?>.</p>-->
-                     <img src="images/mapnocourse.png" alt="" usemap="#Map" />
+                    <img src="images/mapnocourse.png" alt="" usemap="#Map" />
                                     <map name="Map" id="Map">
                                     <area alt="Juego de Memoria" title="Ir al juego de memoria" href="Games/Memory/" shape="poly" coords="533,458,553,457,566,476,556,497,532,497,523,479" />
-                                    <area alt="Ir al Juego de Deletreo" title="Go To Conversation Game" href="Games/Conversation/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
-                                    <area alt="Encuentra los objetos" title="Encuentra los objetos" href="#" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
-                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="#" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
+                                    <area alt="Ir al Juego de Deletreo" title="Go To Conversation Game" href="Games/Speller/" shape="poly" coords="450,461,471,464,481,484,469,504,449,504,435,483" />
+                                    <area alt="Encuentra los objetos" title="Encuentra los objetos" href="Games/Object Finder/" shape="poly" coords="360,465,379,464,392,480,384,503,365,505,348,489" />
+                                    <area alt="Juego de Conversacion" title="Juego de Conversacion" href="Games/Conversation/" shape="poly" coords="263,444,281,447,292,467,278,483,262,486,252,466" />
                                     <area alt="" title="" href="#" shape="poly" coords="288,381,307,388,314,409,297,427,280,422,271,402" />
                                     <area alt="" title="" href="#" shape="poly" coords="384,360,405,367,406,390,387,400,369,396,366,373" />
                                     <area alt="" title="" href="#" shape="poly" coords="453,337,471,333,492,348,485,368,465,373,450,362" />
                                     <area alt="" title="" href="#" shape="poly" coords="479,269,500,268,511,286,499,306,482,308,468,292" />
-                                    <area alt="" title="" href="#" shape="poly" coords="370,235,396,233,407,255,395,273,375,275,361,256" />                                 
+                                    <area alt="" title="" href="#" shape="poly" coords="370,235,396,233,407,255,395,273,375,275,361,256" />                                   
                                     </map>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-  <?php endif; ?>
+    <?php endif; ?>
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
@@ -347,23 +372,6 @@ if (login_check($mysqli) == true) {
 </script>
 
 <!--facebook -->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '851217828251291',
-      xfbml      : true,
-      version    : 'v2.1'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 
 <!--end-->
 

@@ -60,7 +60,10 @@ sec_session_start();
                         <a class="page-scroll" href="#page-top"></a>
                     </li>-->               
                         <li>
-                        <a href="includes/logout.php"><img src="images/logout.png"/></a>
+                        <a href="#"><img src="images/invite.png"/></a>                        
+                        </li> 
+                        <li>
+                         <a href="includes/logout.php"><img src="images/logout.png"/></a>
                         </li> 
                         <li>
                         <a href="index.php"><img src="images/home-text.png"/></a>
